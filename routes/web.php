@@ -124,7 +124,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', [ProfitLossController::class, 'index'])->name('admin.profit_loss.index');
         Route::get('/create', [ProfitLossController::class, 'create'])->name('admin.profit_loss.create');
     });
-
+  
     // balance-sheet
     Route::prefix('balance_sheet')->group(function () {
         Route::get('/', [BalanceSheetController::class, 'index'])->name('admin.balance_sheet.index');
