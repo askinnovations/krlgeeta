@@ -26,4 +26,3 @@ use Spatie\Permission\Models\Permission;
     
     
 }
-
