@@ -373,7 +373,11 @@ body[data-layout=horizontal][data-sidebar=dark] .navbar-brand-box {
     position: absolute;
     right: 0;
     color: var(--bs-footer-color);
+<<<<<<< HEAD
     left:0;
+=======
+    left: 250px;
+>>>>>>> krllive/main
     height: 60px;
     background-color: var(--bs-footer-bg);
     border-top: 1px solid var(--bs-border-color)
@@ -5660,6 +5664,7 @@ body[data-layout=horizontal] .chat-conversation {
     .accordion-button {
         font-weight: 600;
         font-size: 15px;}
+<<<<<<< HEAD
 
 
 
@@ -5811,3 +5816,5 @@ body[data-layout=horizontal] .chat-conversation {
                 display: none !important;
             }
         }
+=======
+>>>>>>> krllive/main

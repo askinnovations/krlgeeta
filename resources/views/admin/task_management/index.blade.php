@@ -62,19 +62,38 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <button class="btn" id="addTaskBtn"
             style="background-color: #ca2639; color: white; border: none;"
             data-bs-toggle="modal" data-bs-target="#addTaskModal">
             <i class="fas fa-plus"></i> Add Task
         </button>
+=======
+            @if (hasAdminPermission('add task_managment'))
+           
+            <button class="btn ms-3" id="addTaskBtn"
+                style="background-color: #ca2639; color: white; border: none;"
+                data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                <i class="fas fa-plus"></i> Add Task
+            </button>
+     
+        @endif
+>>>>>>> krllive/main
             <!-- end page title -->
            <!-- Tabs for Table Selection -->
 <ul class="nav nav-tabs mb-3" id="taskTabs" role="tablist">
     <li class="nav-item" role="presentation">
+<<<<<<< HEAD
         <button class="nav-link active" id="table1-tab" data-bs-toggle="tab" data-bs-target="#table1" type="button" role="tab">Table 1</button>
     </li>
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="table2-tab" data-bs-toggle="tab" data-bs-target="#table2" type="button" role="tab">Table 2</button>
+=======
+        <button class="nav-link active" id="table1-tab" data-bs-toggle="tab" data-bs-target="#table1" type="button" role="tab">Today Tasks</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="table2-tab" data-bs-toggle="tab" data-bs-target="#table2" type="button" role="tab">Other Days Tasks</button>
+>>>>>>> krllive/main
     </li>
 </ul>
 
@@ -83,7 +102,11 @@
     <div class="tab-pane fade show active" id="table1" role="tabpanel">
         <div class="card">
             <div class="card-header">
+<<<<<<< HEAD
                 <h4 class="card-title">🛞 Table 1 - Task Management</h4>
+=======
+                <h4 class="card-title">🛞 Today  Tasks</h4>
+>>>>>>> krllive/main
             </div>
             <div class="card-body">
                 <table id="datatable1" class="table table-bordered dt-responsive nowrap w-100">
@@ -124,7 +147,14 @@
                                 </a></td>
                                 <td>{{ \Carbon\Carbon::parse($task->date)->format('Y-m-d') }}</td>
                                 <td>
+<<<<<<< HEAD
                                  <button class="btn btn-sm btn-light view-btn"><i class="fas fa-eye text-primary"></i></button>
+=======
+                             @if (hasAdminPermission('view task_managment'))
+                                 <button class="btn btn-sm btn-light view-btn"><i class="fas fa-eye text-primary"></i></button>
+                                 @endif
+                            @if (hasAdminPermission('edit task_managment'))
+>>>>>>> krllive/main
                                 <button class="btn btn-light  edit-btn" data-bs-toggle="modal" data-bs-target="#editTaskModal"
                                 data-id="{{ $task->id }}"
                                 data-assigned_to="{{ $task->assigned_to }}"
@@ -133,14 +163,26 @@
                                 data-date="{{ $task->date }}">
                                 <i class="fas fa-pen text-warning"></i>
                                 </button>
+<<<<<<< HEAD
                         <a href="{{ route('admin.task_management.delete',$task->id) }}"  >  <button class="btn btn-sm btn-light delete-btn"><i class="fas fa-trash text-danger"></i></button></a>
 
                                     {{-- <button class="btn btn-sm btn-light delete-btn"><i class="fas fa-trash text-danger"></i></button> --}}
+=======
+                                @endif
+                                @if (hasAdminPermission('delete task_managment'))
+                        <a href="{{ route('admin.task_management.delete',$task->id) }}"  >  <button class="btn btn-sm btn-light delete-btn"><i class="fas fa-trash text-danger"></i></button></a>
+                        @endif
+                              
+>>>>>>> krllive/main
                                 </td>
                             </tr>
                         @empty
                             <tr>
+<<<<<<< HEAD
                                 <td colspan="7" class="text-center">No task found for today.</td>
+=======
+                                <td colspan="8" class="text-center">No task found for today.</td>
+>>>>>>> krllive/main
                             </tr>
                         @endforelse
                     </tbody>
@@ -154,7 +196,11 @@
     <div class="tab-pane fade" id="table2" role="tabpanel">
         <div class="card">
             <div class="card-header">
+<<<<<<< HEAD
                 <h4 class="card-title">🛞 Table 2  Tasks</h4>
+=======
+                <h4 class="card-title">🛞 Others days  Tasks</h4>
+>>>>>>> krllive/main
                 
                 <div class="row mb-3">
                     <div class="col calendar-icon-input ">
@@ -209,7 +255,14 @@
 
                             <td>{{ \Carbon\Carbon::parse($task->date)->format('Y-m-d') }}</td>
                             <td>
+<<<<<<< HEAD
                                 <button class="btn  btn-light view-btn"><i class="fas fa-eye text-primary"></i></button>
+=======
+                                @if (hasAdminPermission('view task_managment'))
+                                <button class="btn  btn-light view-btn"><i class="fas fa-eye text-primary"></i></button>
+                                @endif
+                                @if (hasAdminPermission('edit task_managment'))
+>>>>>>> krllive/main
                                 <button class="btn btn-light edit-btn" data-bs-toggle="modal" data-bs-target="#editTaskModal"
                                     data-id="{{ $task->id }}"
                                     data-assigned_to="{{ $task->assigned_to }}"
@@ -218,9 +271,18 @@
                                     data-date="{{ $task->date }}">
                                     <i class="fas fa-pen text-warning"></i>
                                 </button>
+<<<<<<< HEAD
                                 <a href="{{ route('admin.task_management.delete', $task->id) }}">
                                     <button class="btn btn-sm btn-light delete-btn"><i class="fas fa-trash text-danger"></i></button>
                                 </a>
+=======
+                                @endif
+                                @if (hasAdminPermission('delete task_managment'))
+                                <a href="{{ route('admin.task_management.delete', $task->id) }}">
+                                    <button class="btn btn-sm btn-light delete-btn"><i class="fas fa-trash text-danger"></i></button>
+                                </a>
+                                @endif
+>>>>>>> krllive/main
                             </td>
                         </tr>
                         @empty

@@ -15,7 +15,11 @@
                                         ⬅ Back to Listing
                                     </a>
                                 </div>
+<<<<<<< HEAD
                                 <form method="POST" action="{{ route('admin.employees.update',$employee->id) }}" style="padding: 20px;" >
+=======
+                                <form method="POST" action="{{ route('admin.employees.update',$employee->id) }}" style="padding: 20px;" enctype="multipart/form-data" >
+>>>>>>> krllive/main
                                     @csrf
                                  
                                     <div class="row">
@@ -52,6 +56,7 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+<<<<<<< HEAD
     
                                         <!-- Emergency Contact Number -->
                                         <div class="col-md-6 mb-3">
@@ -60,6 +65,17 @@
                                                 class="form-control @error('phone_number') is-invalid @enderror"
                                                 name="phone_number" id="editPhoneNumber" value="{{ $employee->phone_number }}"
                                                 placeholder="Enter contact number" required minlength="10" maxlength="10">
+=======
+
+                                        <!-- Emergency Contact Number -->
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">📱 Contact Number</label>
+                                            <input type="text"
+                                                class="form-control @error('phone_number') is-invalid @enderror"
+                                                name="phone_number"  value="{{ $employee->phone_number }}"
+                                                placeholder="Enter contact number" required  maxlength="10">
+                                                {{-- <input value="{{ $employee->phone_number }}"> --}}
+>>>>>>> krllive/main
                                             @error('phone_number')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -234,7 +250,17 @@
                                                 <div class="text-danger mt-1">{{ $message }}</div>
                                             @enderror
                                         </div>
+<<<<<<< HEAD
                                         
+=======
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">📸 Employee Photo</label>
+                                            <input type="file" class="form-control @error('photo_url') is-invalid @enderror" name="employee_photo" >
+                                            <input type="hidden"     name="old_employee_photo"  value="{{ $employee->employee_photo }}" >
+                                            
+                                        </div>
+                                
+>>>>>>> krllive/main
     
     
                                     </div>

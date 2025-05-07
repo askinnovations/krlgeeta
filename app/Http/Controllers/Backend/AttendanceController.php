@@ -8,8 +8,21 @@ use App\Models\Employee;
 use App\Models\Attendance;
 use Carbon\Carbon;
 
-class AttendanceController extends Controller
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
+
+class AttendanceController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('admin.permission:view attendance', only: ['index']),
+            new Middleware('admin.permission:create attendance', only: ['create']),
+            new Middleware('admin.permission:edit attendance', only: ['edit']),
+            new Middleware('admin.permission:delete attendance', only: ['destroy']),
+        ];
+    }
+
     public function index(Request $request)
     {
        $employees= Employee::all();

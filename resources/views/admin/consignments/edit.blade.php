@@ -22,7 +22,11 @@
 <div class="row order-booking-form">
 <div class="col-12">
 <div class="card">
+<<<<<<< HEAD
 <div class="card-header add-odr d-flex justify-content-between align-items-center">
+=======
+<div class="card-header d-flex justify-content-between align-items-center">
+>>>>>>> krllive/main
    <div>
       <h4>🛒 consignments edit </h4>
       <p class="mb-0">Enter the required details for the order.</p>
@@ -34,17 +38,29 @@
    </a>
 </div>
 <!-- LR / Consignment add Form -->
+<<<<<<< HEAD
 <div class="row add-form add-odr2">
+=======
+<div class="row add-form">
+>>>>>>> krllive/main
    <div class="col-12">
       <div class="card">
          <div class="card-header d-flex justify-content-between align-items-center">
             <div>
+<<<<<<< HEAD
                <h4>🚚 Add </h4>
+=======
+               <h4>🚚 Add LR / Consignment</h4>
+>>>>>>> krllive/main
                <p class="mb-0">Fill in the required details for shipment and delivery.</p>
             </div>
             <a href="{{ route('admin.consignments.index') }}" class="btn" id="backToListBtn"
                style="background-color: #ca2639; color: white; border: none;">
+<<<<<<< HEAD
             ⬅ Back 
+=======
+            ⬅ Back to Listing
+>>>>>>> krllive/main
             </a>
          </div>
          <form method="POST" action="{{ route('admin.consignments.update', $order->order_id) }}" enctype="multipart/form-data">

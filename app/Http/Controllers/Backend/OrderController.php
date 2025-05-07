@@ -13,21 +13,27 @@ use App\Models\Order;
 use App\Models\Vehicle;
 use App\Models\VehicleType;
 use App\Models\Destination;
-use App\Models\User;
+
+use App\Models\User; 
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
 
-class OrderController extends Controller
+
+class OrderController extends Controller implements HasMiddleware
 {
-    public function  index(Request $request){
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('admin.permission:view order_booking', only: ['index']),
+            new Middleware('admin.permission:create order_booking', only: ['create']),
+            new Middleware('admin.permission:edit order_booking', only: ['edit']),
+            new Middleware('admin.permission:delete order_booking', only: ['destroy']),
+        ];
+    }
+    public function  index(){
 
     $orders = Order::latest()->get();
-
-    if ($request->wantsJson()) {
-        return response()->json([
-            'status' => true,
-            'data' => $orders
-        ]);
-    }
 
 
     return view('admin.orders.index', compact('orders'));
@@ -43,7 +49,9 @@ class OrderController extends Controller
     return view('admin.orders.create', compact('vehicles', 'users','vehiclesType','destination'));
    }
 
-   public function edit(Request $request, $order_id)
+
+   public function edit($order_id)
+
    {
        $vehicles = Vehicle::all();
        $users = User::all();
@@ -55,12 +63,7 @@ class OrderController extends Controller
        if (!empty($order) && isset($order->lr) && is_string($order->lr)) {
         $order->lr = json_decode($order->lr, true);
     }
-    if ($request->wantsJson()) {
-        return response()->json([
-            'status' => true,
-            'data' => $order
-        ]);
-    }
+
  
    
        return view('admin.orders.edit', compact('order', 'vehicles', 'users','vehiclesType','destination'));
@@ -194,14 +197,6 @@ class OrderController extends Controller
 
         $order->save();
 
-        // if this is an API call (Accept: application/json)
-    if ($request->wantsJson()) {
-        return response()->json([
-            'success' => true,
-            'order'   => $order,
-        ], 201);
-    }
-    
 
     return redirect()->route('admin.orders.index')
         ->with('success', 'Order stored with nested LR and cargo arrays successfully!');
@@ -347,12 +342,6 @@ if (isset($cargo['document_file']) && $cargo['document_file'] instanceof Uploade
     $order->lr = $lrArray ?? [];
     $order->save();
 
-    if ($request->wantsJson()) {
-        return response()->json([
-            'status' => true,
-            'data' => $order
-        ]);
-    }
 
     return redirect()->route('admin.orders.index')
         ->with('success', 'Order stored with nested LR and cargo arrays successfully!');

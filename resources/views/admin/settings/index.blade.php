@@ -110,7 +110,13 @@
                </div>
                <div class="row">
                   <div class="col-lg-12 mt-4">
+<<<<<<< HEAD
                      <button type="submit" class="btn btn-primary">Update</button>
+=======
+                     @if (hasAdminPermission('edit settings'))
+                     <button type="submit" class="btn btn-primary">Update</button>
+                     @endif
+>>>>>>> krllive/main
                   </div>
                </div>
             </form>

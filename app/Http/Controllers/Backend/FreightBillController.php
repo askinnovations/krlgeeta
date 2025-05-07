@@ -14,9 +14,19 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 
-class FreightBillController extends Controller
+
+
+class FreightBillController extends Controller implements HasMiddleware
 {
-  
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('admin.permission:view freight_bill', only: ['index']),
+            new Middleware('admin.permission:create freight_bill', only: ['create']),
+            new Middleware('admin.permission:edit freight_bill', only: ['edit']),
+            new Middleware('admin.permission:delete freight_bill', only: ['destroy']),
+        ];
+    }
 
 public function index()
 {

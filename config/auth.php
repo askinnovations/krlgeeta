@@ -37,38 +37,25 @@ return [
 
     
 
-    // 'guards' => [
-    //     'web' => [
-    //         'driver' => 'session',
-    //         'provider' => 'users',
-    //     ],
-    //     'api' => [
-    //         'driver' => 'session',
-    //         'provider' => 'admins',
-    //         'hash' => true,
-    //     ],
 
-    //     'admin' => [ // ✅ Admin guard define kiya
-    //     'driver' => 'session',
-    //     'provider' => 'admins',
-    //     ],
-    // ],
 
     'guards' => [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'admin' => [
+
+        'api' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'users',
+            'hash' => true,
         ],
-        'api' => [ // ✅ New Guard for mobile API login
-            'driver' => 'sanctum',
-            'provider' => 'admins',
+
+        'admin' => [ // ✅ Admin guard define kiya
+        'driver' => 'session',
+        'provider' => 'admins',
         ],
     ],
-
 
     /*
     |--------------------------------------------------------------------------

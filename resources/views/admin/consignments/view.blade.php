@@ -293,6 +293,7 @@
                 display: none;
             }
         }
+<<<<<<< HEAD
 
         @media (max-width: 768px) {
     .header-section {
@@ -371,6 +372,8 @@ padding-bottom:10px
 }
 }
 
+=======
+>>>>>>> krllive/main
     </style>
 </head>
 

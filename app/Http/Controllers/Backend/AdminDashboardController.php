@@ -5,8 +5,21 @@ use App\Models\User;
 
 use Illuminate\Http\Request;
 
-class AdminDashboardController extends Controller
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
+
+class AdminDashboardController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('admin.permission:view dashboard', only: ['index']),
+            // new Middleware('admin.permission:create dashboard', only: ['create']),
+            // new Middleware('admin.permission:edit dashboard', only: ['edit']),
+            // new Middleware('admin.permission:delete dashboard', only: ['destroy']),
+        ];
+    }
+
 
             public function index()
         {   

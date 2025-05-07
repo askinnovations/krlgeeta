@@ -6,8 +6,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PackageType;
 
-class PackageTypeController extends Controller
+
+
+class PackageTypeController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('admin.permission:view package_type', only: ['index']),
+            new Middleware('admin.permission:create package_type', only: ['create']),
+            new Middleware('admin.permission:edit package_type', only: ['edit']),
+            new Middleware('admin.permission:delete package_type', only: ['destroy']),
+        ];
+    }
+
     public function index()
     {
         $tyres = PackageType::all();

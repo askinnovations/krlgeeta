@@ -8,8 +8,20 @@ use App\Models\Maintenance;
 use App\Models\Vehicle;
 
 
-class MaintenanceController extends Controller
+
+
+class MaintenanceController extends Controller implements HasMiddleware
 {
+
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('admin.permission:view maintenance', only: ['index']),
+            new Middleware('admin.permission:create maintenance', only: ['create']),
+            new Middleware('admin.permission:edit maintenance', only: ['edit']),
+            new Middleware('admin.permission:delete maintenance', only: ['destroy']),
+        ];
+    }
 
     public function index()
     {

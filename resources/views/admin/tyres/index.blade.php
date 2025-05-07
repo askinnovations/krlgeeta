@@ -46,6 +46,7 @@
                                     sorting, and pagination via DataTables.
                                 </p>
                             </div>
+<<<<<<< HEAD
                             <button class="btn" id="addTyreBtn"
                                 style="background-color: #ca2639; color: white; border: none;">
                                 <i class="fas fa-plus"></i> Add 
@@ -53,6 +54,17 @@
                         </div>
                         <div class="card-body">
                             <table id="datatable"  class="table table-bordered dt-responsive nowrap w-100">
+=======
+                            @if (hasAdminPermission('create tyres'))
+                            <button class="btn" id="addTyreBtn"
+                                style="background-color: #ca2639; color: white; border: none;">
+                                <i class="fas fa-plus"></i> Add Tyre
+                            </button>
+                            @endif
+                        </div>
+                        <div class="card-body">
+                            <table id=""  class="table table-bordered dt-responsive nowrap w-100">
+>>>>>>> krllive/main
                                 <thead>
                                     <tr >
                                         <th>S.No</th>
@@ -78,6 +90,10 @@
 
                                             <td><span class="badge bg-success">{{ $tyre->tyre_health }}</span></td>
                                             <td>
+<<<<<<< HEAD
+=======
+                                                @if (hasAdminPermission('view tyres'))
+>>>>>>> krllive/main
                                                 <button class="btn btn-sm btn-light view-btn"
                                                     data-bs-toggle="modal"
                                                     data-bs-target="#viewTyreModal"
@@ -90,6 +106,11 @@
                                                     onclick="viewTyreData(this)">
                                                     <i class="fas fa-eye text-primary"></i>
                                                 </button>
+<<<<<<< HEAD
+=======
+                                                @endif
+                                                @if (hasAdminPermission('edit tyres'))
+>>>>>>> krllive/main
                                                 <button class="btn btn-sm btn-light edit-btn"
                                                     data-id="{{ $tyre->id }}"
                                                     data-company="{{ $tyre->company }}"
@@ -102,11 +123,20 @@
                                                     data-bs-target="#updateTyreModal">
                                                     <i class="fas fa-pen text-warning"></i>
                                                 </button>
+<<<<<<< HEAD
+=======
+                                                @endif
+                                                @if (hasAdminPermission('delete tyres'))
+>>>>>>> krllive/main
                                                 <button class="btn btn-sm btn-light delete-btn"><a
                                                         href="{{ route('admin.tyres.delete', $tyre->id) }}"  onclick="return confirm('Are you sure you want to delete this tyre record?')"> <i
                                                             class="fas fa-trash text-danger"></i>
                                                     </a>
                                                 </button>
+<<<<<<< HEAD
+=======
+                                                @endif
+>>>>>>> krllive/main
                                                 
 
                                             </td>

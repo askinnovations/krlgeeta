@@ -40,12 +40,17 @@
       <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
         <div>
+<<<<<<< HEAD
           <h4 class="card-title">🛠️ Maintenance </h4>
+=======
+          <h4 class="card-title">🛠️ Maintenance Listing</h4>
+>>>>>>> krllive/main
           <p class="card-title-desc">
           View, edit, or delete maintenance records below. This table supports search,
           sorting, and pagination via DataTables.
           </p>
         </div>
+<<<<<<< HEAD
         <button class="btn" id="addMaintenanceBtn" style="background-color: #ca2639; color: white; border: none;"
           data-bs-toggle="modal" data-bs-target="#addMaintenanceModal">
           <i class="fas fa-plus"></i> Add 
@@ -53,6 +58,17 @@
         </div>
         <div class="card-body">
         <table id="datatable" class="table table-bordered dt-responsive nowrap w-100">
+=======
+        @if (hasAdminPermission('create maintenance'))
+        <button class="btn" id="addMaintenanceBtn" style="background-color: #ca2639; color: white; border: none;"
+          data-bs-toggle="modal" data-bs-target="#addMaintenanceModal">
+          <i class="fas fa-plus"></i> Add Maintenance
+        </button>
+        @endif
+        </div>
+        <div class="card-body">
+        <table id="" class="table table-bordered ">
+>>>>>>> krllive/main
           <thead>
 
           <tr>
@@ -98,6 +114,10 @@
         </ul>
         </td>
         <td>
+<<<<<<< HEAD
+=======
+          @if (hasAdminPermission('view maintenance'))
+>>>>>>> krllive/main
         <button class="btn btn-sm btn-light view-btn" data-id="{{ $maintenance->id }}"
           data-vehicle="{{ $maintenance->vehicle }}" data-category="{{ $maintenance->category }}"
           data-vendor="{{ $maintenance->vendor}}"
@@ -105,6 +125,11 @@
           data-autoparts='@json($maintenance->autoparts)'>
           <i class="fas fa-eye text-primary"></i>
         </button>
+<<<<<<< HEAD
+=======
+        @endif
+        @if (hasAdminPermission('edit maintenance'))
+>>>>>>> krllive/main
         <button class="btn btn-sm btn-light edit-btn" data-bs-toggle="modal"
           data-bs-target="#updateMaintenanceModal" data-id="{{ $maintenance->id }}"
           data-vehicle="{{ $maintenance->vehicle }}" data-category="{{ $maintenance->category }}"
@@ -113,11 +138,20 @@
           data-autoparts='@json($maintenance->autoparts)'>
           <i class="fas fa-pen text-warning"></i>
         </button>
+<<<<<<< HEAD
 
+=======
+        @endif
+        @if (hasAdminPermission('delete maintenance'))
+>>>>>>> krllive/main
         <button class="btn btn-sm btn-light delete-btn"><A
           href="{{ route('admin.maintenance.delete', $maintenance->id) }}"  onclick="return confirm('Are you sure you want to delete this maintenance record?')">
           <i class="fas fa-trash text-danger"></i></a>
         </button>
+<<<<<<< HEAD
+=======
+        @endif
+>>>>>>> krllive/main
         </td>
         </tr>
       @endforeach

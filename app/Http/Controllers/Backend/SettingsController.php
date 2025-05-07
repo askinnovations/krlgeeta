@@ -9,8 +9,19 @@ use App\Models\Settings;
 use App\Models\User;
 use Illuminate\Support\Str;
 
-class SettingsController extends Controller
+
+class SettingsController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('admin.permission:view settings', only: ['index']),
+            new Middleware('admin.permission:create settings', only: ['create']),
+            new Middleware('admin.permission:edit settings', only: ['edit']),
+            new Middleware('admin.permission:delete settings', only: ['destroy']),
+        ];
+    }
+
     public function index()
     {   
       $settings = Settings::first();

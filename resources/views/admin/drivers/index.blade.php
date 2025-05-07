@@ -46,10 +46,18 @@
                                             sorting, and pagination via DataTables.
                                         </p>
                                     </div>
+<<<<<<< HEAD
+=======
+                                    @if (hasAdminPermission('create  drivers'))
+>>>>>>> krllive/main
                                     <a class="btn"  href="{{ route('admin.drivers.create') }}"  id="addVehicleBtn"
                                     style="background-color: #ca2639; color: white; border: none;">
                                     <i class="fas fa-plus"></i> Add Driver
                                 </a>
+<<<<<<< HEAD
+=======
+                                @endif
+>>>>>>> krllive/main
                                 </div>
                                 <div class="card-body">
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap w-100">
@@ -73,20 +81,38 @@
                                                 <td>{{$driver->vehicle_number ?? ' '}}</td>
                                               
                                                 <td><span class="badge bg-success">{{$driver->status}}</span></td>
+<<<<<<< HEAD
                                                 <td>
+=======
+                                                <td>  @if (hasAdminPermission('view drivers'))
+>>>>>>> krllive/main
                                                     <a href="{{ route('admin.drivers.show',$driver->id) }}">
                                                     <button class="btn btn-sm btn-light view-btn">
                                                         <i class="fas fa-eye text-primary"></i>
                                                     </button>
                                                     </a>
+<<<<<<< HEAD
+=======
+                                                    @endif
+                                                    @if (hasAdminPermission('edit drivers'))
+>>>>>>> krllive/main
                                                     <a href="{{ route('admin.drivers.edit',$driver->id) }}">
                                                     <button class="btn btn-sm btn-light edit-btn">
                                                         <i class="fas fa-pen text-warning"></i>
                                                     </button></a>
+<<<<<<< HEAD
+=======
+                                                    @endif
+                                                    @if (hasAdminPermission('delete drivers'))
+>>>>>>> krllive/main
                                                     <a href="{{ route('admin.drivers.delete',$driver->id) }}">
                                                     <button class="btn btn-sm btn-light delete-btn">
                                                         <i class="fas fa-trash text-danger"></i>
                                                     </button></a>
+<<<<<<< HEAD
+=======
+                                                    @endif
+>>>>>>> krllive/main
                                                 </td>
                                             </tr>   
                                             @endforeach

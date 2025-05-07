@@ -47,11 +47,19 @@
                                             View, edit, or delete warehouse details below.
                                         </p>
                                     </div>
+<<<<<<< HEAD
+=======
+                                    @if (hasAdminPermission('create warehouse'))
+>>>>>>> krllive/main
                                     <button class="btn" id="addWarehouseBtn"
                                         style="background-color: #ca2639; color: white; border: none;"
                                         data-bs-toggle="modal" data-bs-target="#addWarehouseModal">
                                         <i class="fas fa-plus"></i> Add Warehouse
                                     </button>
+<<<<<<< HEAD
+=======
+                                    @endif
+>>>>>>> krllive/main
                                 </div>
                                 <div class="card-body">
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap w-100">
@@ -76,11 +84,16 @@
                                                 <td>{{$warehouse->incharge}}</td>
 
                                                 <td>
+<<<<<<< HEAD
                                                    
+=======
+                                                    @if (hasAdminPermission('view warehouse'))
+>>>>>>> krllive/main
                                                    <button class="btn btn-sm btn-light view-btn" data-bs-toggle="modal"
                                                         data-bs-target="#viewWarehouseModal">
                                                         <i class="fas fa-eye text-primary"></i>
                                                     </button>
+<<<<<<< HEAD
                                                     <button class="btn btn-sm btn-light edit-btn edit-warehouse-btn" data-bs-toggle="modal"
                                                         data-bs-target="#editWarehouseModal" data-id="{{ $warehouse->id }}"><i
                                                             class="fas fa-pen text-warning"></i></button>
@@ -89,6 +102,19 @@
                                                                 <i class="fas fa-trash text-danger"></i>
                                                             </button>
                                                             
+=======
+                                                    @endif
+                                                    @if (hasAdminPermission('edit warehouse'))
+                                                    <button class="btn btn-sm btn-light edit-btn edit-warehouse-btn" data-bs-toggle="modal"
+                                                    data-bs-target="#editWarehouseModal" data-id="{{ $warehouse->id }}"><i
+                                                        class="fas fa-pen text-warning"></i></button>
+                                                        @endif
+                                                    @if (hasAdminPermission('delete warehouse'))
+                                                    <button class="btn btn-sm btn-light delete-btn" onclick="return confirm('Are you sure you want to delete this warehouse?') ? window.location.href='{{ route('admin.warehouse.delete', $warehouse->id) }}' : false;">
+                                                            <i class="fas fa-trash text-danger"></i>
+                                                    </button>
+                                                        @endif
+>>>>>>> krllive/main
                                                 </td>
                                             </tr>
                                             @endforeach

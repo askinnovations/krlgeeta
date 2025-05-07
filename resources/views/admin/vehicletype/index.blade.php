@@ -46,10 +46,18 @@
                                     sorting, and pagination via DataTables.
                                 </p>
                             </div>
+<<<<<<< HEAD
+=======
+                            @if (hasAdminPermission('create vehicle_type'))
+>>>>>>> krllive/main
                             <button class="btn" id="addTyreBtn"
                                 style="background-color: #ca2639; color: white; border: none;">
                                 <i class="fas fa-plus"></i> Add VehicleType
                             </button>
+<<<<<<< HEAD
+=======
+                            @endif
+>>>>>>> krllive/main
                         </div>
                         <div class="card-body">
                             <table id=""  class="table table-bordered dt-responsive nowrap w-100">
@@ -63,17 +71,31 @@
                                 <tbody>
                                     @foreach($tyres as $tyre)
                                     <td>{{ $loop->iteration  }}</td>
+<<<<<<< HEAD
                         <td>{{ $tyre->vehicletype }}</td>
                         <td>
+=======
+                                            <td>{{ $tyre->vehicletype }}</td>
+                                            <td>
+                                                @if (hasAdminPermission('view vehicle_type'))
+>>>>>>> krllive/main
                                                 <button class="btn btn-sm btn-light view-btn"
                                                     data-bs-toggle="modal"
                                                     data-bs-target="#viewTyreModal"
                                                     data-vehicletype="{{ $tyre->vehicletype }}"
+<<<<<<< HEAD
                                                     
 
                                                     onclick="viewTyreData(this)">
                                                     <i class="fas fa-eye text-primary"></i>
                                                 </button>
+=======
+                                                    onclick="viewTyreData(this)">
+                                                    <i class="fas fa-eye text-primary"></i>
+                                                </button>
+                                                @endif
+                                                @if (hasAdminPermission('edit vehicle_type'))
+>>>>>>> krllive/main
                                                 <button class="btn btn-sm btn-light edit-btn"
                                                     data-id="{{ $tyre->id }}"
                                                     data-name="{{ $tyre->vehicletype }}"
@@ -81,13 +103,22 @@
                                                     data-bs-target="#updateTyreModal">
                                                     <i class="fas fa-pen text-warning"></i>
                                                 </button>
+<<<<<<< HEAD
+=======
+                                                @endif
+                                                @if (hasAdminPermission('delete vehicle_type'))
+>>>>>>> krllive/main
                                                 <button class="btn btn-sm btn-light delete-btn"><a
                                                         href="{{ route('admin.vehicletype.delete', $tyre->id) }}"  onclick="return confirm('Are you sure you want to delete this tyre record?')"> <i
                                                             class="fas fa-trash text-danger"></i>
                                                     </a>
                                                 </button>
+<<<<<<< HEAD
                                                 
 
+=======
+                                                @endif
+>>>>>>> krllive/main
                                             </td>
                                         </tr>
                                     @endforeach

@@ -8,8 +8,19 @@ use App\Models\Warehouse;
 
 
 
-class WarehouseController extends Controller
+
+class WarehouseController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('admin.permission:view warehouse', only: ['index']),
+            new Middleware('admin.permission:create warehouse', only: ['create']),
+            new Middleware('admin.permission:edit warehouse', only: ['edit']),
+            new Middleware('admin.permission:delete warehouse', only: ['destroy']),
+        ];
+    }
+
     public function index()
     {
 

@@ -5,14 +5,24 @@
             <div class="row add form">
                     <div class="col-12">
                             <div class="card">
+<<<<<<< HEAD
                                 <div class="card-header  add-odr3  d-flex justify-content-between align-items-center">
                                     <div>
                                         <h4 class="card-title">🚛 Vehicle Details</h4>
+=======
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4>🚛 Vehicle Details</h4>
+>>>>>>> krllive/main
                                         <p>Enter the  details for the vehicle.</p>
                                     </div>
                                     <a  href="{{ route('admin.vehicles.index') }}" class="btn" id="backToListBtn"
                                         style="background-color: #ca2639; color: white; border: none;">
+<<<<<<< HEAD
                                         ⬅ Back 
+=======
+                                        ⬅ Back to Listing
+>>>>>>> krllive/main
                                     </a>
                                 </div>
 

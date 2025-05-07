@@ -7,12 +7,20 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
                                     <div>
+<<<<<<< HEAD
                                         <h4 class="card-title">🚛 Vehicle Details</h4>
+=======
+                                        <h4>🚛 Vehicle Details</h4>
+>>>>>>> krllive/main
                                         <p>Enter the required details for the vehicle.</p>
                                     </div>
                                     <a  href="{{ route('admin.vehicles.index') }}" class="btn" id="backToListBtn"
                                         style="background-color: #ca2639; color: white; border: none;">
+<<<<<<< HEAD
                                         ⬅ Back 
+=======
+                                        ⬅ Back to Listing
+>>>>>>> krllive/main
                                     </a>
                                 </div>
                                 <form action="{{ route('admin.vehicles.update', ['id' => $vehicle->id]) }}" method="POST" enctype="multipart/form-data">

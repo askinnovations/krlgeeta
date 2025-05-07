@@ -5,18 +5,32 @@
         <!-- View Vehicle Details Page -->
         <div class="view-vehicle-form">
             <div class="card">
+<<<<<<< HEAD
                 <div class="card-header add-odr3 d-flex justify-content-between align-items-center">
                     <div>
                         <h4 class="card-title">🚗  View Details</h4>
+=======
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <h4>🚗 Vehicle Details View</h4>
+>>>>>>> krllive/main
                         <p class="mb-0">View details for the vehicle.</p>
                     </div>
                     <a href="{{ route('admin.vehicles.index') }}" class="btn" id="backToListBtn"
                         style="background-color: #ca2639; color: white; border: none;">
+<<<<<<< HEAD
                         ⬅ Back
                     </a>
                 </div>
                 <div class="card-body">
   
+=======
+                        ⬅ Back to Listing
+                    </a>
+                </div>
+                <div class="card-body">
+    <h4>Vehicle Details</h4>
+>>>>>>> krllive/main
     <p><strong>🚗 Vehicle Type:</strong> {{ $vehicle->vehicle_type }}</p>
     <p><strong>🔢 Vehicle Number:</strong> {{ $vehicle->vehicle_no }}</p>
     <p><strong>📞 Registered Mobile Number:</strong> {{ $vehicle->registered_mobile_number }}</p>

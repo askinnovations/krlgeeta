@@ -136,12 +136,27 @@
                               @endforeach
                            </td>
                            <td>
+<<<<<<< HEAD
                               <button class="btn btn-sm btn-light view-btn"><i
                                  class="fas fa-eye text-primary"></i></button>
                               <a href="" class="btn btn-sm btn-light"><i
                                  class="fas fa-pen text-warning"></i></a>
                               <button class="btn btn-sm btn-light delete-btn"><i
                                  class="fas fa-trash text-danger"></i></button>
+=======
+                              @if (hasAdminPermission('view freight_bill'))
+                              <button class="btn btn-sm btn-light view-btn"><i
+                                 class="fas fa-eye text-primary"></i></button>
+                                 @endif
+                                 @if (hasAdminPermission('edit freight_bill'))
+                              <a href="" class="btn btn-sm btn-light"><i
+                                 class="fas fa-pen text-warning"></i></a>
+                                 @endif
+                                 @if (hasAdminPermission('delete freight_bill'))
+                              <button class="btn btn-sm btn-light delete-btn"><i
+                                 class="fas fa-trash text-danger"></i></button>
+                                 @endif
+>>>>>>> krllive/main
                            </td>
                            </td>
                         </tr>
@@ -175,8 +190,15 @@
                   </div>
                </div>
                <div class="text-end">
+<<<<<<< HEAD
                   <button type="submit" class="btn btn-primary">Add
                   freight bill</button>
+=======
+                  @if (hasAdminPermission('add freight_bill'))
+                  <button type="submit" class="btn btn-primary">Add
+                  freight bill</button>
+                  @endif
+>>>>>>> krllive/main
                </div>
             </form>
          </div>

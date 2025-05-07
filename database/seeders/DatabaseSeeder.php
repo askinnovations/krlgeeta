@@ -3,7 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+<<<<<<< HEAD
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+=======
+
+>>>>>>> krllive/main
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,4 +24,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> krllive/main
 }
