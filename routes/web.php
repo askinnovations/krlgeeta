@@ -6,11 +6,6 @@ use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\Auth\RegisterController as FrontendRegisterController;
 use App\Http\Controllers\Frontend\Auth\LoginController as FrontendLoginController;
 use App\Http\Controllers\Backend\Auth\LoginController as BackendLoginController;
-
-
-
-
-
 use App\Http\Controllers\Backend\{
     EmployeeController, PayrollController, AdminDashboardController, DestinationController,
     UserController, TyreController, WarehouseController, OrderController, PackageTypeController,
